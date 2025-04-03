@@ -108,13 +108,13 @@ def test_pos_view(session):
 if __name__ == "__main__":
     # Explicitly define connection parameters
     connection_parameters = {
-        "account": "TLZSEVS-ZA14024",
-        "user": "ROHITH",
-        "password": "Rohith@8885405754",
-        "role": "HOL_ROLE",
-        "warehouse": "HOL_WH",
-        "database": "HOL_DB",
-        "schema": "ANALYTICS"
+        "account": "",
+        "user": "",
+        "password": "",
+        "role": "",
+        "warehouse": "",
+        "database": "",
+        "schema": ""
     }
 
     # Create a Snowpark session

@@ -71,13 +71,13 @@ def validate_raw_tables(session):
 if __name__ == "__main__":
     # Create a local Snowpark session
     connection_parameters = {
-        "account": "TLZSEVS-ZA14024",
-        "user": "ROHITH",
-        "password": "Rohith@8885405754",
-        "role": "HOL_ROLE",
-        "warehouse": "HOL_WH",
-        "database": "HOL_DB",
-        "schema": "ANALYTICS"
+        "account": "",
+        "user": "",
+        "password": "",
+        "role": "",
+        "warehouse": "",
+        "database": "",
+        "schema": ""
     }
 
     with Session.builder.configs(connection_parameters).create() as session:

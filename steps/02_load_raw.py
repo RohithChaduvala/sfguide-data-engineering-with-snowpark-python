@@ -70,6 +70,16 @@ def validate_raw_tables(session):
 # For local debugging
 if __name__ == "__main__":
     # Create a local Snowpark session
-    with Session.builder.getOrCreate() as session:
+    connection_parameters = {
+        "account": "TLZSEVS-ZA14024",
+        "user": "ROHITH",
+        "password": "Rohith@8885405754",
+        "role": "HOL_ROLE",
+        "warehouse": "HOL_WH",
+        "database": "HOL_DB",
+        "schema": "ANALYTICS"
+    }
+
+    with Session.builder.configs(connection_parameters).create() as session:
         load_all_raw_tables(session)
 #        validate_raw_tables(session)

@@ -12,6 +12,16 @@ from snowflake.snowpark import Session
 #import snowflake.snowpark.types as T
 import snowflake.snowpark.functions as F
 
+# Define connection parameters
+connection_parameters = {
+    "account": "TLZSEVS-ZA14024",
+    "user": "ROHITH",
+    "password": "Rohith@8885405754",
+    "role": "HOL_ROLE",
+    "warehouse": "HOL_WH",
+    "database": "HOL_DB",
+    "schema": "ANALYTICS"
+}
 
 def table_exists(session, schema='', name=''):
     exists = session.sql("SELECT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{}' AND TABLE_NAME = '{}') AS TABLE_EXISTS".format(schema, name)).collect()[0]['TABLE_EXISTS']
@@ -58,7 +68,7 @@ def main(session: Session) -> str:
 # Be aware you may need to type-convert arguments if you add input parameters
 if __name__ == '__main__':
     # Create a local Snowpark session
-    with Session.builder.getOrCreate() as session:
+    with Session.builder.configs(connection_parameters).create() as session:
         import sys
         if len(sys.argv) > 1:
             print(main(session, *sys.argv[1:]))  # type: ignore

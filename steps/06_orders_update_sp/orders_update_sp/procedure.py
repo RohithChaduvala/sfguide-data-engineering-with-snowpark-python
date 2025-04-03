@@ -14,13 +14,13 @@ import snowflake.snowpark.functions as F
 
 # Define connection parameters
 connection_parameters = {
-    "account": "TLZSEVS-ZA14024",
-    "user": "ROHITH",
-    "password": "Rohith@8885405754",
-    "role": "HOL_ROLE",
-    "warehouse": "HOL_WH",
-    "database": "HOL_DB",
-    "schema": "ANALYTICS"
+    "account": "",
+    "user": "",
+    "password": "",
+    "role": "",
+    "warehouse": "",
+    "database": "",
+    "schema": ""
 }
 
 def table_exists(session, schema='', name=''):
